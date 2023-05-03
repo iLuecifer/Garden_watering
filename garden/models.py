@@ -10,3 +10,4 @@ class SensorValue(models.Model):
     soil_temp = models.FloatField()
     light = models.FloatField()
     timestamp = models.DateTimeField()
+    status = models.BooleanField(default=False)
