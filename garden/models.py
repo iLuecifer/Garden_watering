@@ -11,3 +11,8 @@ class SensorValue(models.Model):
     light = models.FloatField()
     timestamp = models.DateTimeField()
     status = models.BooleanField(default=False)
+
+class BustedPictures(models.Model):
+    id = models.AutoField(primary_key = True)
+    picture = models.ImageField(upload_to='busted_pictures/')
+    timestamp = models.DateTimeField(auto_now=True)

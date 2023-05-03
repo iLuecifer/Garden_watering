@@ -23,4 +23,7 @@ urlpatterns = [
     path('test/', views.my_view, name ='my_view'),
     path('insert/', views.insert_sensor_value, name ='insert_sensor_value'),
     path('sensors/getall/', views.getAllSensorData, name ='getAllSensorData'),
+    path('sensors/capture/', views.pictureAtMotion, name ='pictureAtMotion'),
+
+    
 ]

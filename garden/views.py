@@ -9,6 +9,10 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import SensorValue
 from datetime import datetime
 from django.core import serializers
+import RPi.GPIO as GPIO
+import time
+import subprocess
+import os 
 
 def my_view(request):
 
@@ -123,4 +127,41 @@ def getAllSensorData(request):
     data = serializers.serialize('json', all_sensor_values)
     return JsonResponse(data, safe=False)
 
+def pictureAtMotion(request): 
+    # Set the GPIO mode to BCM numbering
+    GPIO.setmode(GPIO.BCM)
 
+    # Define the input pin for the sensor and output pin for the camera trigger
+    pir_sensor = 12
+    camera_trigger = 24
+
+    # Set up the input pin as a pull-down input and the output pin as a GPIO output
+    GPIO.setup(pir_sensor, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(camera_trigger, GPIO.OUT)
+    # Add the callback function to the sensor input
+    GPIO.add_event_detect(pir_sensor, GPIO.RISING, callback=detect_motion)
+    GPIO.cleanup()
+    return JsonResponse({"code": 200, "message":"picture captured"})
+
+
+
+# Define a callback function to be called when motion is detected
+def detect_motion(channel):
+    print("Motion detected! Taking a picture...")
+    
+    # Trigger the camera module
+    GPIO.output(camera_trigger, GPIO.HIGH)
+    time.sleep(0.5)
+    GPIO.output(camera_trigger, GPIO.LOW)
+    
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    
+    directory = os.path.join(os.path.expanduser("~"), "busted_pictures")
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        
+    # Take a picture and save it to a file
+    filename = os.path.join(directory, "motion_picture_{}.jpg".format(timestamp))
+
+    subprocess.call(["raspistill", "-o", filename])
+    print("Picture taken and saved as", filename)
