@@ -24,6 +24,6 @@ urlpatterns = [
     path('insert/', views.insert_sensor_value, name ='insert_sensor_value'),
     path('sensors/getall/', views.getAllSensorData, name ='getAllSensorData'),
     path('sensors/capture/', views.pictureAtMotion, name ='pictureAtMotion'),
-
+    path('api/run_motion_detection/', views.motion_detection_api),
     
 ]

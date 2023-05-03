@@ -13,6 +13,7 @@ import RPi.GPIO as GPIO
 import time
 import subprocess
 import os 
+import requests
 
 def my_view(request):
 
@@ -165,3 +166,29 @@ def detect_motion(channel):
 
     subprocess.call(["raspistill", "-o", filename])
     print("Picture taken and saved as", filename)
+    
+
+motion_detection_running = False
+
+def motion_detection_api(request):
+    global motion_detection_running
+    if request.method == 'GET':
+        if motion_detection_running:
+            response = stop_motion_detection(request)
+            motion_detection_running = False
+            return response
+        else:
+            command = {'command': 'start'}
+            motion_detection_running = True
+            return JsonResponse(command)
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+
+def stop_motion_detection(request):
+    # Create stop signal file
+    stop_signal_file = '/tmp/stop_signal.txt'
+    with open(stop_signal_file, 'w') as f:
+        f.write('stop')
+    
+    return JsonResponse({'command': 'stop'})
