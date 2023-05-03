@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', views.my_view, name ='my_view'),
     path('insert/', views.insert_sensor_value, name ='insert_sensor_value'),
-    
+    path('sensors/getall/', views.getAllSensorData, name ='getAllSensorData'),
 ]
