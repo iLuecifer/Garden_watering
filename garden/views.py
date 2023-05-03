@@ -186,9 +186,53 @@ def motion_detection_api(request):
 
 
 def stop_motion_detection(request):
-    # Create stop signal file
-    stop_signal_file = '/tmp/stop_signal.txt'
-    with open(stop_signal_file, 'w') as f:
-        f.write('stop')
-    
-    return JsonResponse({'command': 'stop'})
+    if request.method == 'GET':
+        # Create stop signal file
+        stop_signal_file = 'garden/stop_signal/stop_signal.txt'
+        with open(stop_signal_file, 'w') as f:
+            f.write('stop')
+        
+        return JsonResponse({'command': 'stop'})
+
+def enable_relais(request):
+    if request.method == 'GET':
+        RELAY_PIN = 21
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(RELAY_PIN, GPIO.OUT)
+        GPIO.output(RELAY_PIN, GPIO.HIGH)
+        #GPIO.cleanup()
+        return JsonResponse({"code":200, "message": "successfully enabled"})
+
+def disable_relais(request):
+    if request.method == 'GET':
+        RELAY_PIN = 21
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(RELAY_PIN, GPIO.OUT)
+        GPIO.output(RELAY_PIN, GPIO.LOW)
+        #GPIO.cleanup()
+        return JsonResponse({"code":200, "message": "successfully disabled"})
+
+
+def activate_liveStream(request):
+    from django.http import StreamingHttpResponse
+    import cv2
+
+    class CameraStreamView():
+        def get_frame(self):
+            cap = cv2.VideoCapture(0)
+            while True:
+                ret, frame = cap.read()
+                if not ret:
+                    break
+                # Convert the frame to JPEG format
+                ret, jpeg = cv2.imencode('.jpg', frame)
+                frame = jpeg.tobytes()
+                yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+        def __call__(self, request):
+            return StreamingHttpResponse(self.get_frame(), content_type='multipart/x-mixed-replace; boundary=frame')
+
+    return CameraStreamView()(request)
+
+
