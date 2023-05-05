@@ -180,19 +180,21 @@ def motion_detection_api(request):
         else:
             command = {'command': 'start'}
             motion_detection_running = True
+            stop_signal_file = 'garden/stop_signal/stop_signal.txt'
+            if os.path.exists(stop_signal_file):
+                os.remove(stop_signal_file)
             return JsonResponse(command)
     else:
         return JsonResponse({'error': 'Invalid request method'})
 
 
 def stop_motion_detection(request):
-    if request.method == 'GET':
-        # Create stop signal file
-        stop_signal_file = 'garden/stop_signal/stop_signal.txt'
-        with open(stop_signal_file, 'w') as f:
-            f.write('stop')
-        
-        return JsonResponse({'command': 'stop'})
+    # Create stop signal file
+    stop_signal_file = 'garden/stop_signal/stop_signal.txt'
+    with open(stop_signal_file, 'w') as f:
+        f.write('stop')
+    
+    return JsonResponse({'command': 'stop'})
 
 def enable_relais(request):
     if request.method == 'GET':

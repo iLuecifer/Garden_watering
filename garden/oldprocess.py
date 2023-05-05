@@ -49,7 +49,7 @@ class MotionDetectionDaemon:
                 self.logger.debug('Stop signal file detected, exiting...')
                 break
 
-            response = requests.get("http://172.0.0.1:8999/api/motion_detection/")
+            response = requests.get("http://127.0.0.1:8999/api/motion_detection/")
             if response.status_code == 200:
                 message = response.json()
                 if message["command"] == "start":

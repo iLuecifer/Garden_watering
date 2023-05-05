@@ -15,8 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from garden import views 
+from django.urls import path, re_path
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +30,6 @@ urlpatterns = [
     path('api/disable_relais/', views.disable_relais),
     path('api/run_motion_detection/', views.motion_detection_api),
     path('api/live/', views.activate_liveStream),
+    #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+
 ]
