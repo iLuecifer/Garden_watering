@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n0w6(gm7*ma600l=#dbd1urx_9&2a6t$d$e9z5a1%rv6ppd43!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -128,3 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DJANGO_SETTINGS_MODULE = 'garden_watering.settings'

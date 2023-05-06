@@ -22,12 +22,12 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.my_view, name ='my_view'),
-    path('insert/', views.insert_sensor_value, name ='insert_sensor_value'),
-    path('sensors/getall/', views.getAllSensorData, name ='getAllSensorData'),
-    path('sensors/capture/', views.pictureAtMotion, name ='pictureAtMotion'),
-    path('api/enable_relais/', views.enable_relais),
-    path('api/disable_relais/', views.disable_relais),
+    path('test/', views.live_measurement ),
+    path('insert/', views.insert_sensor_value_api),
+    path('sensors/getall/', views.getAllSensorData_api),
+    path('sensors/capture/', views.pictureAtMotion_api),
+    path('api/enable_relais/', views.enable_relais_api),
+    path('api/disable_relais/', views.disable_relais_api),
     path('api/run_motion_detection/', views.motion_detection_api),
     path('api/live/', views.activate_liveStream),
     #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),

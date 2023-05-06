@@ -15,13 +15,13 @@ import subprocess
 import os 
 import requests
 
-def my_view(request):
-
-    results = call_sensors()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    if not len(results) == 0:
-        return JsonResponse({"results": results})
-    else:
-        return JsonResponse({"text": "kein Daten"})
+def live_measurement(request):
+    if request.method == 'GET':
+        results = call_sensors()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        if not len(results) == 0:
+            return JsonResponse({"results": results})
+        else:
+            return JsonResponse({"text": "kein Daten"})
 
 def call_sensors():
 
@@ -88,7 +88,7 @@ def call_bh1750():
 #def messwerte_lesen(request):
  #   return HttpResponse(call_bme680())
 
-def insert_sensor_value(request):
+def insert_sensor_value_api(request):
     
     try:
         results = call_sensors()
@@ -123,12 +123,12 @@ def insert_sensor_value(request):
         # return a response indicating that the record was inserted
         return JsonResponse({"code": 200, "message": "successfully added", "data": results})
 
-def getAllSensorData(request):
+def getAllSensorData_api(request):
     all_sensor_values = SensorValue.objects.all()
     data = serializers.serialize('json', all_sensor_values)
     return JsonResponse(data, safe=False)
 
-def pictureAtMotion(request): 
+def pictureAtMotion_api(request): 
     # Set the GPIO mode to BCM numbering
     GPIO.setmode(GPIO.BCM)
 
@@ -149,7 +149,8 @@ def pictureAtMotion(request):
 # Define a callback function to be called when motion is detected
 def detect_motion(channel):
     print("Motion detected! Taking a picture...")
-    
+    camera_trigger = 24
+
     # Trigger the camera module
     GPIO.output(camera_trigger, GPIO.HIGH)
     time.sleep(0.5)
@@ -174,7 +175,7 @@ def motion_detection_api(request):
     global motion_detection_running
     if request.method == 'GET':
         if motion_detection_running:
-            response = stop_motion_detection(request)
+            response = stop_motion_detection_api(request)
             motion_detection_running = False
             return response
         else:
@@ -188,7 +189,7 @@ def motion_detection_api(request):
         return JsonResponse({'error': 'Invalid request method'})
 
 
-def stop_motion_detection(request):
+def stop_motion_detection_api(request):
     # Create stop signal file
     stop_signal_file = 'garden/stop_signal/stop_signal.txt'
     with open(stop_signal_file, 'w') as f:
@@ -196,7 +197,7 @@ def stop_motion_detection(request):
     
     return JsonResponse({'command': 'stop'})
 
-def enable_relais(request):
+def enable_relais_api(request):
     if request.method == 'GET':
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
@@ -205,7 +206,7 @@ def enable_relais(request):
         #GPIO.cleanup()
         return JsonResponse({"code":200, "message": "successfully enabled"})
 
-def disable_relais(request):
+def disable_relais_api(request):
     if request.method == 'GET':
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
@@ -236,5 +237,41 @@ def activate_liveStream(request):
             return StreamingHttpResponse(self.get_frame(), content_type='multipart/x-mixed-replace; boundary=frame')
 
     return CameraStreamView()(request)
+
+
+def insert_sensor_value():
+    
+    try:
+        results = call_sensors()
+        air_temp = results['air_temp']['value'] if 'air_temp' in results else None
+        pressure = results['pressure']['value'] if 'pressure' in results else None
+        air_hum = results['air_hum']['value'] if 'air_hum' in results else None
+        soil_hum = results['soil_hum']['value'] if 'soil_hum' in results else None
+        soil_temp = results['soil_temp']['value'] if 'soil_temp' in results else None
+        light = results['light']['value'] if 'light' in results else None
+
+        # handle the case where a sensor value is missing
+        if None in (air_temp, pressure, air_hum, soil_hum, soil_temp, light):
+            return ({"code": 400, "message": "missing sensor value"})
+
+
+        # handle the case where results is not a dictionary
+        sensor_value = []
+        sensor_value = SensorValue.objects.create(
+            air_temp=air_temp,
+            pressure=pressure,
+            air_hum=air_hum,
+            soil_hum=soil_hum,
+            soil_temp=soil_temp,
+            light=light,
+            timestamp=datetime.now(),
+        )
+    except:
+        # handle all other exceptions
+        return ({"code": 400, "message": "An error occurred while reading and preparing data"})
+    else:
+        # execute if no exception was raised in the try block
+        # return a response indicating that the record was inserted
+        return ({"code": 200, "message": "successfully added", "data": results})
 
 
