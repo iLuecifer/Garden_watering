@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'garden',
     'garden_watering',
-    'frontend'
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DJANGO_SETTINGS_MODULE = 'garden_watering.settings'
+#DJANGO_SETTINGS_MODULE = 'garden_watering.settings'

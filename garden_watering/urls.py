@@ -30,6 +30,9 @@ urlpatterns = [
     path('api/disable_relais/', views.disable_relais_api),
     path('api/run_motion_detection/', views.motion_detection_api),
     path('api/live/', views.activate_liveStream),
+    path('api/register/', views.CreateUserView.as_view(), name='register'),
+    path('api/login/', views.login_api, name='login'),
+    path('api/logout/', views.logout_api, name='logout'),
     #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 
 ]

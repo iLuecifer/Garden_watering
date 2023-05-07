@@ -1,19 +1,38 @@
-from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-import bme680#bme680
+from django.http import JsonResponse
+import bme680
 from adafruit_seesaw.seesaw import Seesaw
 import board
-import smbus#BH1750
-import json 
-from django.views.decorators.csrf import csrf_exempt
-from .models import SensorValue
+import smbus
+import os
+from garden.models import SensorValue, WaterPumpeLogs
 from datetime import datetime
 from django.core import serializers
 import RPi.GPIO as GPIO
 import time
 import subprocess
-import os 
-import requests
+import datetime
+import pytz
+from django.contrib.auth import get_user_model,get_user
+from rest_framework import generics
+from .serializers import UserSerializer
+from django.contrib.auth.models import User
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
+from .serializers import UserSerializer
+from django.contrib.auth import authenticate, login, logout
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
+
+tz = pytz.timezone('Europe/Berlin')
+now = datetime.datetime.now(tz)
+User = get_user_model()
+
+class CreateUserView(generics.CreateAPIView):
+    serializer_class = UserSerializer
+
 
 def live_measurement(request):
     if request.method == 'GET':
@@ -113,7 +132,8 @@ def insert_sensor_value_api(request):
             soil_hum=soil_hum,
             soil_temp=soil_temp,
             light=light,
-            timestamp=datetime.now(),
+            timestamp=datetime.datetime.now(),
+            status= status
         )
     except:
         # handle all other exceptions
@@ -199,23 +219,59 @@ def stop_motion_detection_api(request):
 
 def enable_relais_api(request):
     if request.method == 'GET':
+        status = 1
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(RELAY_PIN, GPIO.OUT)
         GPIO.output(RELAY_PIN, GPIO.HIGH)
+
+        water_pump = WaterPumpeLogs(start=datetime.datetime.now(), user=request.user)
+        water_pump.save()
         #GPIO.cleanup()
         return JsonResponse({"code":200, "message": "successfully enabled"})
 
 def disable_relais_api(request):
     if request.method == 'GET':
+        status = 0
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(RELAY_PIN, GPIO.OUT)
         GPIO.output(RELAY_PIN, GPIO.LOW)
+        current_log = WaterPumpeLogs.objects.filter(user=request.user, stop=None).last()
+        # Update the stop time
+        if not current_log == None:
+            current_log.stop = datetime.datetime.now()
+            current_log.save()
         #GPIO.cleanup()
         return JsonResponse({"code":200, "message": "successfully disabled"})
 
+def enable_relais():
+    status = 1
+    RELAY_PIN = 21
+    user = User.objects.get(id=1)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(RELAY_PIN, GPIO.OUT)
+    GPIO.output(RELAY_PIN, GPIO.HIGH)
+    water_pump = WaterPumpeLogs(start=datetime.datetime.now(), user=user)
+    water_pump.save()
+    #GPIO.cleanup()
+    return ({"code":200, "message": "successfully enabled"})
 
+def disable_relais():
+    status = 0
+    RELAY_PIN = 21
+    user = User.objects.get(id=1)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(RELAY_PIN, GPIO.OUT)
+    GPIO.output(RELAY_PIN, GPIO.LOW)
+    current_log = WaterPumpeLogs.objects.filter(user=user, stop=None).last()
+    # Update the stop time
+    if not current_log == None:
+        current_log.stop = datetime.datetime.now()
+        current_log.save()
+    #GPIO.cleanup()
+    return ({"code":200, "message": "successfully disabled"})
+    
 def activate_liveStream(request):
     from django.http import StreamingHttpResponse
     import cv2
@@ -238,23 +294,29 @@ def activate_liveStream(request):
 
     return CameraStreamView()(request)
 
+status = 0
 
 def insert_sensor_value():
     
     try:
+        print("calling sensors..")
         results = call_sensors()
+        print("sensors results: %s", results)
+        print("assigning to variables..")
         air_temp = results['air_temp']['value'] if 'air_temp' in results else None
         pressure = results['pressure']['value'] if 'pressure' in results else None
         air_hum = results['air_hum']['value'] if 'air_hum' in results else None
         soil_hum = results['soil_hum']['value'] if 'soil_hum' in results else None
         soil_temp = results['soil_temp']['value'] if 'soil_temp' in results else None
         light = results['light']['value'] if 'light' in results else None
+        timestamp = datetime.datetime.now()
 
+        print("testing if there is missing values..")
         # handle the case where a sensor value is missing
         if None in (air_temp, pressure, air_hum, soil_hum, soil_temp, light):
             return ({"code": 400, "message": "missing sensor value"})
 
-
+        print("creating ORM Object..")
         # handle the case where results is not a dictionary
         sensor_value = []
         sensor_value = SensorValue.objects.create(
@@ -264,9 +326,12 @@ def insert_sensor_value():
             soil_hum=soil_hum,
             soil_temp=soil_temp,
             light=light,
-            timestamp=datetime.now(),
+            timestamp=timestamp,
+            status= status
         )
-    except:
+        print("successfully saved.")
+    except Exception as e:
+        print("Error occurred:", e)
         # handle all other exceptions
         return ({"code": 400, "message": "An error occurred while reading and preparing data"})
     else:
@@ -275,3 +340,39 @@ def insert_sensor_value():
         return ({"code": 200, "message": "successfully added", "data": results})
 
 
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def register_api(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        user = serializer.save()
+        return Response({'username': user.username}, status=status.HTTP_201_CREATED)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@csrf_exempt
+def login_api(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return JsonResponse({'status': 'success', 'message': 'User authenticated.'})
+        else:
+            return JsonResponse({'status': 'fail', 'message': 'Invalid login credentials.'})
+    else:
+        return JsonResponse({'status': 'fail', 'message': 'Invalid request method.'})
+
+@csrf_exempt
+def logout_api(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            logout(request)
+            return JsonResponse({'status': 'success', 'message': 'User logged out.'})
+        else:
+            return JsonResponse({'status': 'fail', 'message': 'User not authenticated.'})
+    else:
+        return JsonResponse({'status': 'fail', 'message': 'Invalid request method.'})
