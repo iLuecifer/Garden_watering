@@ -4,6 +4,10 @@ import logging
 import RPi.GPIO as GPIO
 import subprocess
 from datetime import datetime
+# Set the environment variable for Django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "garden_watering.settings")
+django.setup()
+from garden.models import BustedPictures
 
 stop_signal_file = 'garden/stop_signal/stop_signal.txt'
 logger = logging.getLogger(__name__)
@@ -43,6 +47,10 @@ def detect_motion(channel):
     subprocess.call(["raspistill", "-o", filename])
     logger.info("Picture taken and saved as %s", filename)
 
+    picture = BustedPictures()
+    picture.picture.save(filename, open(filename, 'rb'))
+    picture.timestamp.save(datetime.datetime.now())
+    picture.save()
 try:
     while True:
         logger.info("testing stop signal...")

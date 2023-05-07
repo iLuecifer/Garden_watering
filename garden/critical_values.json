@@ -1,0 +1,15 @@
+{
+    "air_temp_critical_min": 5,
+    "air_temp_critical_max": 35,
+    "air_hum_critical_min": 30,
+    "air_hum_critical_max": 80,
+    "soil_temp_critical_min": 10,
+    "soil_temp_critical_max": 30,
+    "soil_hum_critical_min": 200,
+    "soil_hum_critical_max": 600,
+    "light_critical_min": 0,
+    "light_critical_max": 2000,
+    "pressure_critical_min": 950,
+    "pressure_critical_max": 1050
+  }
+  

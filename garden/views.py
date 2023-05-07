@@ -24,7 +24,7 @@ from .serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+import json
 
 tz = pytz.timezone('Europe/Berlin')
 now = datetime.datetime.now(tz)
@@ -360,7 +360,7 @@ def login_api(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return JsonResponse({'status': 'success', 'message': 'User authenticated.'})
+            return JsonResponse({'status': '200', 'message': 'User authenticated.'})
         else:
             return JsonResponse({'status': 'fail', 'message': 'Invalid login credentials.'})
     else:
@@ -371,8 +371,18 @@ def logout_api(request):
     if request.method == 'POST':
         if request.user.is_authenticated:
             logout(request)
-            return JsonResponse({'status': 'success', 'message': 'User logged out.'})
+            return JsonResponse({'status': '200', 'message': 'User logged out.'})
         else:
             return JsonResponse({'status': 'fail', 'message': 'User not authenticated.'})
     else:
         return JsonResponse({'status': 'fail', 'message': 'Invalid request method.'})
+
+
+def replace_criticalData(request):
+    if request.method == 'POST':
+        new_data = json.loads(request.body)
+        with open('data.json', 'w') as file:
+            json.dump(new_data, file)
+        return JsonResponse({'status': '200', 'message': 'successfully changed.'})
+    else:
+        return JsonResponse({'status': '403', 'message': 'Invalid request method.'})
