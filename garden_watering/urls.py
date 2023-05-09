@@ -22,17 +22,18 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.live_measurement ),
-    path('insert/', views.insert_sensor_value_api),
-    path('sensors/getall/', views.getAllSensorData_api),
-    path('sensors/capture/', views.pictureAtMotion_api),
-    path('api/enable_relais/', views.enable_relais_api),
-    path('api/disable_relais/', views.disable_relais_api),
-    path('api/run_motion_detection/', views.motion_detection_api),
-    path('api/live/', views.activate_liveStream),
+    path('api/measure/', views.live_measurement ),
+    path('api/insert/', views.Insert_sensor_value_api.as_view()),
+    path('api/getall/', views.GetAllSensorData_api.as_view()),
+    path('api/capture/', views.PictureAtMotion_api.as_view()),
+    path('api/enable_relais/', views.Enable_relais_api.as_view()),
+    path('api/disable_relais/', views.Disable_relais_api.as_view()),
+    path('api/run_motion_detection/', views.Motion_detection_api.as_view()),
+    path('api/live/', views.Activate_liveStream.as_view()),
     path('api/register/', views.CreateUserView.as_view(), name='register'),
-    path('api/login/', views.login_api, name='login'),
+    path('api/login/', views.CustomAuthToken.as_view(), name='login'),
     path('api/logout/', views.logout_api, name='logout'),
+    path('list/', views.UserList.as_view(), name='logout'),
     #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 
 ]

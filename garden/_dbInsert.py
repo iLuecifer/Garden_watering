@@ -16,14 +16,18 @@ while True:
     print("starting")
     response = insert_sensor_value()
     # Open the JSON file
-    with open('example.json', 'r') as file:
+    with open('/home/it/garden_watering/garden/critical_values.json', 'r') as file:
         # Load the JSON data as a Python object
         criticalValues = json.load(file)
 
-    if response["data"]["soil_hum"] < criticalValues["soil_hum_critical_min"]:
-        enable_relais()
-    elif response["data"]["soil_hum"] > criticalValues["soil_hum_critical_max"]:
-        disable_relais()
+    if response["code"] == 200:  # Check if the response code is 200 (success)
+        if response["data"]["soil_hum"]["value"] < criticalValues["soil_hum_critical_min"]:
+            enable_relais()
+        elif response["data"]["soil_hum"]["value"] > criticalValues["soil_hum_critical_max"]:
+            disable_relais()
+        print(response)
+    else:
+        print("Error in response:", response["message"])
 
-    print(response)
     sleep(300)
+

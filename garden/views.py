@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 import bme680
 from adafruit_seesaw.seesaw import Seesaw
 import board
@@ -12,9 +11,7 @@ import time
 import subprocess
 import datetime
 import pytz
-from django.contrib.auth import get_user_model,get_user
 from rest_framework import generics
-from .serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.response import Response
@@ -25,10 +22,17 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+from rest_framework.views import APIView
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+from rest_framework import status
+#from rest_framework.permissions import IsAuthenticated
+from garden_watering.permissions import IsAuthenticatedWithToken
 
 tz = pytz.timezone('Europe/Berlin')
 now = datetime.datetime.now(tz)
-User = get_user_model()
+
 
 class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
@@ -107,62 +111,70 @@ def call_bh1750():
 #def messwerte_lesen(request):
  #   return HttpResponse(call_bme680())
 
-def insert_sensor_value_api(request):
-    
-    try:
-        results = call_sensors()
-        air_temp = results['air_temp']['value'] if 'air_temp' in results else None
-        pressure = results['pressure']['value'] if 'pressure' in results else None
-        air_hum = results['air_hum']['value'] if 'air_hum' in results else None
-        soil_hum = results['soil_hum']['value'] if 'soil_hum' in results else None
-        soil_temp = results['soil_temp']['value'] if 'soil_temp' in results else None
-        light = results['light']['value'] if 'light' in results else None
 
-        # handle the case where a sensor value is missing
-        if None in (air_temp, pressure, air_hum, soil_hum, soil_temp, light):
-            return JsonResponse({"code": 400, "message": "missing sensor value"})
+class Insert_sensor_value_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def post(self, request):
+        try:
+            results = call_sensors()
+            air_temp = results['air_temp']['value'] if 'air_temp' in results else None
+            pressure = results['pressure']['value'] if 'pressure' in results else None
+            air_hum = results['air_hum']['value'] if 'air_hum' in results else None
+            soil_hum = results['soil_hum']['value'] if 'soil_hum' in results else None
+            soil_temp = results['soil_temp']['value'] if 'soil_temp' in results else None
+            light = results['light']['value'] if 'light' in results else None
 
+            # handle the case where a sensor value is missing
+            if None in (air_temp, pressure, air_hum, soil_hum, soil_temp, light):
+                return JsonResponse({"code": 400, "message": "missing sensor value"})
 
-        # handle the case where results is not a dictionary
-        sensor_value = []
-        sensor_value = SensorValue.objects.create(
-            air_temp=air_temp,
-            pressure=pressure,
-            air_hum=air_hum,
-            soil_hum=soil_hum,
-            soil_temp=soil_temp,
-            light=light,
-            timestamp=datetime.datetime.now(),
-            status= status
-        )
-    except:
-        # handle all other exceptions
-        return JsonResponse({"code": 400, "message": "An error occured while reading and preparing data"})
-    else:
-        # execute if no exception was raised in the try block
-        # return a response indicating that the record was inserted
-        return JsonResponse({"code": 200, "message": "successfully added", "data": results})
+            current_log = WaterPumpeLogs.objects.filter(end=None).last()
+            if current_log:#if there is a row it means pump ins on
+                status = 1
+            # handle the case where results is not a dictionary
+            sensor_value = []
+            sensor_value = SensorValue.objects.create(
+                air_temp=air_temp,
+                pressure=pressure,
+                air_hum=air_hum,
+                soil_hum=soil_hum,
+                soil_temp=soil_temp,
+                light=light,
+                timestamp=datetime.datetime.now(),
+                status= status
+            )
+        except:
+            # handle all other exceptions
+            return JsonResponse({"code": 400, "message": "An error occured while reading and preparing data"})
+        else:
+            # execute if no exception was raised in the try block
+            # return a response indicating that the record was inserted
+            return JsonResponse({"code": 200, "message": "successfully added", "data": results})
 
-def getAllSensorData_api(request):
-    all_sensor_values = SensorValue.objects.all()
-    data = serializers.serialize('json', all_sensor_values)
-    return JsonResponse(data, safe=False)
+class GetAllSensorData_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
+        all_sensor_values = SensorValue.objects.all()
+        data = serializers.serialize('json', all_sensor_values)
+        return JsonResponse(data, safe=False)
 
-def pictureAtMotion_api(request): 
+class PictureAtMotion_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
     # Set the GPIO mode to BCM numbering
-    GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BCM)
 
-    # Define the input pin for the sensor and output pin for the camera trigger
-    pir_sensor = 12
-    camera_trigger = 24
+        # Define the input pin for the sensor and output pin for the camera trigger
+        pir_sensor = 12
+        camera_trigger = 24
 
-    # Set up the input pin as a pull-down input and the output pin as a GPIO output
-    GPIO.setup(pir_sensor, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.setup(camera_trigger, GPIO.OUT)
-    # Add the callback function to the sensor input
-    GPIO.add_event_detect(pir_sensor, GPIO.RISING, callback=detect_motion)
-    GPIO.cleanup()
-    return JsonResponse({"code": 200, "message":"picture captured"})
+        # Set up the input pin as a pull-down input and the output pin as a GPIO output
+        GPIO.setup(pir_sensor, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(camera_trigger, GPIO.OUT)
+        # Add the callback function to the sensor input
+        GPIO.add_event_detect(pir_sensor, GPIO.RISING, callback=detect_motion)
+        GPIO.cleanup()
+        return JsonResponse({"code": 200, "message":"picture captured"})
 
 
 
@@ -191,9 +203,11 @@ def detect_motion(channel):
 
 motion_detection_running = False
 
-def motion_detection_api(request):
-    global motion_detection_running
-    if request.method == 'GET':
+
+class Motion_detection_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
+        global motion_detection_running
         if motion_detection_running:
             response = stop_motion_detection_api(request)
             motion_detection_running = False
@@ -205,20 +219,20 @@ def motion_detection_api(request):
             if os.path.exists(stop_signal_file):
                 os.remove(stop_signal_file)
             return JsonResponse(command)
-    else:
-        return JsonResponse({'error': 'Invalid request method'})
-
+     
 
 def stop_motion_detection_api(request):
-    # Create stop signal file
     stop_signal_file = 'garden/stop_signal/stop_signal.txt'
     with open(stop_signal_file, 'w') as f:
         f.write('stop')
-    
-    return JsonResponse({'command': 'stop'})
+        return JsonResponse({'command': 'stop'})
 
-def enable_relais_api(request):
-    if request.method == 'GET':
+    
+
+class Enable_relais_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    #permission_classes = [IsAuthenticated]
+    def get(self, request):
         status = 1
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
@@ -230,14 +244,17 @@ def enable_relais_api(request):
         #GPIO.cleanup()
         return JsonResponse({"code":200, "message": "successfully enabled"})
 
-def disable_relais_api(request):
-    if request.method == 'GET':
+
+
+class Disable_relais_api(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
         status = 0
         RELAY_PIN = 21
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(RELAY_PIN, GPIO.OUT)
         GPIO.output(RELAY_PIN, GPIO.LOW)
-        current_log = WaterPumpeLogs.objects.filter(user=request.user, stop=None).last()
+        current_log = WaterPumpeLogs.objects.filter(user=request.user, end=None).last()
         # Update the stop time
         if not current_log == None:
             current_log.stop = datetime.datetime.now()
@@ -264,7 +281,7 @@ def disable_relais():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(RELAY_PIN, GPIO.OUT)
     GPIO.output(RELAY_PIN, GPIO.LOW)
-    current_log = WaterPumpeLogs.objects.filter(user=user, stop=None).last()
+    current_log = WaterPumpeLogs.objects.filter(user=user, end=None).last()
     # Update the stop time
     if not current_log == None:
         current_log.stop = datetime.datetime.now()
@@ -272,32 +289,34 @@ def disable_relais():
     #GPIO.cleanup()
     return ({"code":200, "message": "successfully disabled"})
     
-def activate_liveStream(request):
-    from django.http import StreamingHttpResponse
-    import cv2
+class Activate_liveStream(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
 
-    class CameraStreamView():
-        def get_frame(self):
-            cap = cv2.VideoCapture(0)
-            while True:
-                ret, frame = cap.read()
-                if not ret:
-                    break
-                # Convert the frame to JPEG format
-                ret, jpeg = cv2.imencode('.jpg', frame)
-                frame = jpeg.tobytes()
-                yield (b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        from django.http import StreamingHttpResponse
+        import cv2
 
-        def __call__(self, request):
-            return StreamingHttpResponse(self.get_frame(), content_type='multipart/x-mixed-replace; boundary=frame')
+        class CameraStreamView():
+            def get_frame(self):
+                cap = cv2.VideoCapture(0, cv2.CAP_V4L)
+                while True:
+                    ret, frame = cap.read()
+                    if not ret:
+                        break
+                    # Convert the frame to JPEG format
+                    ret, jpeg = cv2.imencode('.jpg', frame)
+                    frame = jpeg.tobytes()
+                    yield (b'--frame\r\n'
+                        b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-    return CameraStreamView()(request)
+            def __call__(self, request):
+                return StreamingHttpResponse(self.get_frame(), content_type='multipart/x-mixed-replace; boundary=frame')
 
-status = 0
+        return CameraStreamView()(request)
+
 
 def insert_sensor_value():
-    
+
     try:
         print("calling sensors..")
         results = call_sensors()
@@ -315,6 +334,11 @@ def insert_sensor_value():
         # handle the case where a sensor value is missing
         if None in (air_temp, pressure, air_hum, soil_hum, soil_temp, light):
             return ({"code": 400, "message": "missing sensor value"})
+
+        status = 0
+        current_log = WaterPumpeLogs.objects.filter(end=None).last()
+        if current_log:#if there is a row it means pump is on
+            status = 1
 
         print("creating ORM Object..")
         # handle the case where results is not a dictionary
@@ -353,18 +377,22 @@ def register_api(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 @csrf_exempt
-def login_api(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
+class Login_api(APIView):
+    permission_classes = [AllowAny]
+    def post(self, request):
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+        print(username, password)
+        user = authenticate(request=request,
+                            username=username, password=password)
         if user is not None:
             login(request, user)
-            return JsonResponse({'status': '200', 'message': 'User authenticated.'})
+            token, created = Token.objects.get_or_create(user=user)
+            print(token, created)
+            return JsonResponse({'token': token.token})
         else:
             return JsonResponse({'status': 'fail', 'message': 'Invalid login credentials.'})
-    else:
-        return JsonResponse({'status': 'fail', 'message': 'Invalid request method.'})
 
 @csrf_exempt
 def logout_api(request):
@@ -380,9 +408,37 @@ def logout_api(request):
 
 def replace_criticalData(request):
     if request.method == 'POST':
-        new_data = json.loads(request.body)
-        with open('data.json', 'w') as file:
-            json.dump(new_data, file)
-        return JsonResponse({'status': '200', 'message': 'successfully changed.'})
+        if request.user.is_authenticated:
+            new_data = json.loads(request.body)
+            with open('data.json', 'w') as file:
+                json.dump(new_data, file)
+            return JsonResponse({'status': '200', 'message': 'successfully changed.'})
     else:
         return JsonResponse({'status': '403', 'message': 'Invalid request method.'})
+
+
+class UserAPIView(APIView):
+    serializer_class = UserSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = AuthTokenSerializer
+
+class CustomAuthToken(ObtainAuthToken):
+    serializer_class = AuthTokenSerializer
+    permission_classes = [AllowAny]
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({'token': token.key})

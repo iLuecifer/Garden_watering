@@ -1,4 +1,6 @@
 #!/bin/bash
+source /home/it/garden_watering/venv/bin/activate
+
 export PYTHONPATH=/home/it/garden_watering:$PYTHONPATH
 
 # Start the Django server
@@ -13,12 +15,14 @@ motion_pid=$!
 python /home/it/garden_watering/garden/_dbInsert.py &
 dbinsert_pid=$!
 
+cd frontend
 # Start the npm server
-npm start server &
+npm start &
 server_pid=$!
 
+cd ..
 # Save the process IDs to a file for later use
-echo $motion_pid $dbinsert_pid $django_pid > /home/it/garden_watering/garden/pids.txt
+echo $motion_pid $dbinsert_pid $django_pid $server_pid > /home/it/garden_watering/garden/pids.txt
 
 # Define a function to stop the processes gracefully
 function stop_processes {
@@ -32,5 +36,5 @@ trap stop_processes SIGTERM SIGINT
 # Wait for the processes to terminate
 wait
 
-npm stop server
-
+cd frontend
+npm stop

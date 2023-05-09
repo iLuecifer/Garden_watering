@@ -1,155 +1,286 @@
-2023-05-07 20:19:02,915 - INFO - Handler added to logger
-2023-05-07 20:19:02,917 - INFO - testing stop signal...
-2023-05-07 20:19:02,917 - INFO - Stop signal file detected, waiting for deletion...
-2023-05-07 20:19:18,934 - INFO - Stop signal file deleted, resuming process
-2023-05-07 20:19:23,681 - INFO - motion detected !
-2023-05-07 20:19:24,182 - INFO - preparing to take a picture
-2023-05-07 20:19:30,087 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-19-24.jpg
-2023-05-07 20:19:35,106 - INFO - motion detected !
-2023-05-07 20:19:35,607 - INFO - preparing to take a picture
-2023-05-07 20:19:41,485 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-19-35.jpg
-2023-05-07 20:20:35,706 - INFO - motion detected !
-2023-05-07 20:20:36,207 - INFO - preparing to take a picture
-2023-05-07 20:20:42,095 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-20-36.jpg
-2023-05-07 20:21:40,339 - INFO - motion detected !
-2023-05-07 20:21:40,840 - INFO - preparing to take a picture
-2023-05-07 20:21:46,713 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-21-40.jpg
-2023-05-07 20:24:49,945 - INFO - Handler added to logger
-2023-05-07 20:24:49,949 - INFO - testing stop signal...
-2023-05-07 20:24:49,951 - INFO - Stop signal file detected, waiting for deletion...
-2023-05-07 20:25:14,619 - INFO - motion detected !
-2023-05-07 20:25:15,120 - INFO - preparing to take a picture
-2023-05-07 20:25:21,004 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-25-15.jpg
-2023-05-07 20:25:28,034 - INFO - motion detected !
-2023-05-07 20:25:28,535 - INFO - preparing to take a picture
-2023-05-07 20:25:34,413 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-25-28.jpg
-2023-05-07 20:26:35,069 - INFO - Stop signal file deleted, resuming process
-2023-05-07 20:26:36,070 - INFO - testing stop signal...
-2023-05-07 20:26:36,071 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:37,073 - INFO - testing stop signal...
-2023-05-07 20:26:37,073 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:38,074 - INFO - testing stop signal...
-2023-05-07 20:26:38,075 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:39,077 - INFO - testing stop signal...
-2023-05-07 20:26:39,077 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:40,078 - INFO - testing stop signal...
-2023-05-07 20:26:40,079 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:41,080 - INFO - testing stop signal...
-2023-05-07 20:26:41,081 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:42,082 - INFO - testing stop signal...
-2023-05-07 20:26:42,083 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:43,084 - INFO - testing stop signal...
-2023-05-07 20:26:43,085 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:44,086 - INFO - testing stop signal...
-2023-05-07 20:26:44,087 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:45,088 - INFO - testing stop signal...
-2023-05-07 20:26:45,089 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:45,495 - INFO - motion detected !
-2023-05-07 20:26:45,996 - INFO - preparing to take a picture
-2023-05-07 20:26:46,091 - INFO - testing stop signal...
-2023-05-07 20:26:46,093 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:47,095 - INFO - testing stop signal...
-2023-05-07 20:26:47,097 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:48,099 - INFO - testing stop signal...
-2023-05-07 20:26:48,100 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:49,101 - INFO - testing stop signal...
-2023-05-07 20:26:49,102 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:50,103 - INFO - testing stop signal...
-2023-05-07 20:26:50,104 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:51,110 - INFO - testing stop signal...
-2023-05-07 20:26:51,110 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:51,898 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-26-45.jpg
-2023-05-07 20:26:52,112 - INFO - testing stop signal...
-2023-05-07 20:26:52,112 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:53,113 - INFO - testing stop signal...
-2023-05-07 20:26:53,114 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:54,115 - INFO - testing stop signal...
-2023-05-07 20:26:54,116 - INFO - stop signal file not found.. repeating..
-2023-05-07 20:26:55,117 - INFO - testing stop signal...
-2023-05-07 20:26:55,118 - INFO - Stop signal file detected, waiting for deletion...
-2023-05-07 20:27:04,797 - INFO - motion detected !
-2023-05-07 20:27:05,298 - INFO - preparing to take a picture
-2023-05-07 20:27:11,199 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-27-05.jpg
-2023-05-07 20:30:42,079 - INFO - Handler added to logger
-2023-05-07 20:30:42,083 - INFO - testing stop signal...
-2023-05-07 20:30:42,084 - INFO - Stop signal file detected, motion detection stopped
-2023-05-07 20:31:13,118 - INFO - Stop signal file deleted, resuming process
-2023-05-07 20:31:13,120 - INFO - testing stop signal...
-2023-05-07 20:31:13,120 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:14,122 - INFO - testing stop signal...
-2023-05-07 20:31:14,122 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:15,124 - INFO - testing stop signal...
-2023-05-07 20:31:15,124 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:16,126 - INFO - testing stop signal...
-2023-05-07 20:31:16,126 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:17,128 - INFO - testing stop signal...
-2023-05-07 20:31:17,128 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:18,130 - INFO - testing stop signal...
-2023-05-07 20:31:18,130 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:19,132 - INFO - testing stop signal...
-2023-05-07 20:31:19,132 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:19,912 - INFO - motion detected !
-2023-05-07 20:31:20,133 - INFO - testing stop signal...
-2023-05-07 20:31:20,134 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:20,135 - INFO - motion detected !
-2023-05-07 20:31:20,413 - INFO - preparing to take a picture
-2023-05-07 20:31:20,636 - INFO - preparing to take a picture
-2023-05-07 20:31:20,673 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-31-20.jpg
-2023-05-07 20:31:20,675 - INFO - testing stop signal...
-2023-05-07 20:31:20,675 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:21,676 - INFO - testing stop signal...
-2023-05-07 20:31:21,677 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:22,678 - INFO - testing stop signal...
-2023-05-07 20:31:22,678 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:23,679 - INFO - testing stop signal...
-2023-05-07 20:31:23,680 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:24,681 - INFO - testing stop signal...
-2023-05-07 20:31:24,681 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:25,683 - INFO - testing stop signal...
-2023-05-07 20:31:25,683 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:26,328 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-31-20.jpg
-2023-05-07 20:31:26,684 - INFO - testing stop signal...
-2023-05-07 20:31:26,685 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:27,687 - INFO - testing stop signal...
-2023-05-07 20:31:27,687 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:28,688 - INFO - testing stop signal...
-2023-05-07 20:31:28,689 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:29,690 - INFO - testing stop signal...
-2023-05-07 20:31:29,691 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:30,692 - INFO - testing stop signal...
-2023-05-07 20:31:30,692 - INFO - Stop signal file detected, motion detection stopped
-2023-05-07 20:31:39,703 - INFO - Stop signal file deleted, resuming process
-2023-05-07 20:31:39,726 - INFO - testing stop signal...
-2023-05-07 20:31:39,726 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:40,728 - INFO - testing stop signal...
-2023-05-07 20:31:40,728 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:41,729 - INFO - testing stop signal...
-2023-05-07 20:31:41,730 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:42,649 - INFO - motion detected !
-2023-05-07 20:31:42,732 - INFO - testing stop signal...
-2023-05-07 20:31:42,733 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:42,733 - INFO - motion detected !
-2023-05-07 20:31:43,150 - INFO - preparing to take a picture
-2023-05-07 20:31:43,234 - INFO - preparing to take a picture
-2023-05-07 20:31:43,283 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-31-43.jpg
-2023-05-07 20:31:43,285 - INFO - testing stop signal...
-2023-05-07 20:31:43,285 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:44,287 - INFO - testing stop signal...
-2023-05-07 20:31:44,287 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:45,289 - INFO - testing stop signal...
-2023-05-07 20:31:45,289 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:46,291 - INFO - testing stop signal...
-2023-05-07 20:31:46,291 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:47,293 - INFO - testing stop signal...
-2023-05-07 20:31:47,293 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:48,294 - INFO - testing stop signal...
-2023-05-07 20:31:48,295 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:49,042 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-07_20-31-43.jpg
-2023-05-07 20:31:49,296 - INFO - testing stop signal...
-2023-05-07 20:31:49,296 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:50,298 - INFO - testing stop signal...
-2023-05-07 20:31:50,299 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:51,301 - INFO - testing stop signal...
-2023-05-07 20:31:51,301 - INFO - stop signal file not found, motion detection started
-2023-05-07 20:31:52,302 - INFO - testing stop signal...
-2023-05-07 20:31:52,303 - INFO - Stop signal file detected, motion detection stopped
+2023-05-09 09:21:08,116 - INFO - Handler added to logger
+2023-05-09 09:21:08,140 - INFO - testing stop signal...
+2023-05-09 09:21:08,141 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:09,143 - INFO - testing stop signal...
+2023-05-09 09:21:09,143 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:10,144 - INFO - testing stop signal...
+2023-05-09 09:21:10,145 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:11,147 - INFO - testing stop signal...
+2023-05-09 09:21:11,148 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:12,149 - INFO - testing stop signal...
+2023-05-09 09:21:12,150 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:12,479 - INFO - motion detected !
+2023-05-09 09:21:12,980 - INFO - preparing to take a picture
+2023-05-09 09:21:13,152 - INFO - testing stop signal...
+2023-05-09 09:21:13,153 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:21:13,154 - INFO - motion detected !
+2023-05-09 09:21:13,655 - INFO - preparing to take a picture
+2023-05-09 09:21:13,709 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-21-13.jpg
+2023-05-09 09:25:07,110 - INFO - Handler added to logger
+2023-05-09 09:25:07,133 - INFO - testing stop signal...
+2023-05-09 09:25:07,134 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:25:14,987 - INFO - motion detected !
+2023-05-09 09:25:15,154 - INFO - motion detected !
+2023-05-09 09:25:15,488 - INFO - preparing to take a picture
+2023-05-09 09:25:15,655 - INFO - preparing to take a picture
+2023-05-09 09:25:15,687 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-25-15.jpg
+2023-05-09 09:30:08,060 - INFO - Handler added to logger
+2023-05-09 09:30:08,083 - INFO - testing stop signal...
+2023-05-09 09:30:08,083 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:30:13,405 - INFO - motion detected !
+2023-05-09 09:30:13,907 - INFO - preparing to take a picture
+2023-05-09 09:30:14,101 - INFO - motion detected !
+2023-05-09 09:30:14,605 - INFO - preparing to take a picture
+2023-05-09 09:30:14,655 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-30-14.jpg
+2023-05-09 09:33:15,068 - INFO - Handler added to logger
+2023-05-09 09:33:15,096 - INFO - testing stop signal...
+2023-05-09 09:33:15,097 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:33:19,380 - INFO - motion detected !
+2023-05-09 09:33:19,881 - INFO - preparing to take a picture
+2023-05-09 09:33:20,114 - INFO - motion detected !
+2023-05-09 09:33:20,616 - INFO - preparing to take a picture
+2023-05-09 09:33:20,648 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-33-20.jpg
+2023-05-09 09:35:43,009 - INFO - Handler added to logger
+2023-05-09 09:35:43,037 - INFO - testing stop signal...
+2023-05-09 09:35:43,037 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:35:44,873 - INFO - motion detected !
+2023-05-09 09:35:45,051 - INFO - motion detected !
+2023-05-09 09:35:45,374 - INFO - preparing to take a picture
+2023-05-09 09:35:45,552 - INFO - preparing to take a picture
+2023-05-09 09:35:45,581 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-35-45.jpg
+2023-05-09 09:37:06,907 - INFO - Handler added to logger
+2023-05-09 09:37:06,934 - INFO - testing stop signal...
+2023-05-09 09:37:06,935 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:37:08,659 - INFO - motion detected !
+2023-05-09 09:37:08,959 - INFO - motion detected !
+2023-05-09 09:37:09,160 - INFO - preparing to take a picture
+2023-05-09 09:37:09,460 - INFO - preparing to take a picture
+2023-05-09 09:37:09,497 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-37-08.jpg
+2023-05-09 09:39:19,462 - INFO - Handler added to logger
+2023-05-09 09:39:19,485 - INFO - testing stop signal...
+2023-05-09 09:39:19,485 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:39:20,628 - INFO - motion detected !
+2023-05-09 09:39:21,129 - INFO - preparing to take a picture
+2023-05-09 09:39:21,499 - INFO - motion detected !
+2023-05-09 09:39:22,001 - INFO - preparing to take a picture
+2023-05-09 09:39:22,026 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-39-19.jpg
+2023-05-09 09:40:52,519 - INFO - Handler added to logger
+2023-05-09 09:40:52,542 - INFO - testing stop signal...
+2023-05-09 09:40:52,543 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:40:58,907 - INFO - motion detected !
+2023-05-09 09:40:59,408 - INFO - preparing to take a picture
+2023-05-09 09:40:59,575 - INFO - motion detected !
+2023-05-09 09:41:00,076 - INFO - preparing to take a picture
+2023-05-09 09:41:00,115 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-40-59.jpg
+2023-05-09 09:42:49,193 - INFO - Handler added to logger
+2023-05-09 09:42:49,215 - INFO - testing stop signal...
+2023-05-09 09:42:49,216 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:42:51,235 - INFO - motion detected !
+2023-05-09 09:42:51,736 - INFO - preparing to take a picture
+2023-05-09 09:42:52,231 - INFO - motion detected !
+2023-05-09 09:42:52,732 - INFO - preparing to take a picture
+2023-05-09 09:42:52,761 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-42-52.jpg
+2023-05-09 09:45:26,781 - INFO - Handler added to logger
+2023-05-09 09:45:26,806 - INFO - testing stop signal...
+2023-05-09 09:45:26,806 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:45:36,332 - INFO - motion detected !
+2023-05-09 09:45:36,833 - INFO - preparing to take a picture
+2023-05-09 09:45:36,840 - INFO - motion detected !
+2023-05-09 09:45:37,341 - INFO - preparing to take a picture
+2023-05-09 09:45:37,366 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-45-36.jpg
+2023-05-09 09:46:27,356 - INFO - Handler added to logger
+2023-05-09 09:46:27,381 - INFO - testing stop signal...
+2023-05-09 09:46:27,382 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:46:29,207 - INFO - motion detected !
+2023-05-09 09:46:29,396 - INFO - motion detected !
+2023-05-09 09:46:29,708 - INFO - preparing to take a picture
+2023-05-09 09:46:29,897 - INFO - preparing to take a picture
+2023-05-09 09:46:29,929 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-46-27.jpg
+2023-05-09 09:47:55,319 - INFO - Handler added to logger
+2023-05-09 09:47:55,354 - INFO - testing stop signal...
+2023-05-09 09:47:55,354 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:47:56,997 - INFO - motion detected !
+2023-05-09 09:47:57,379 - INFO - motion detected !
+2023-05-09 09:47:57,498 - INFO - preparing to take a picture
+2023-05-09 09:47:57,880 - INFO - preparing to take a picture
+2023-05-09 09:47:57,909 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-47-55.jpg
+2023-05-09 09:52:45,072 - INFO - Handler added to logger
+2023-05-09 09:52:45,101 - INFO - testing stop signal...
+2023-05-09 09:52:45,102 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:53:03,146 - INFO - Handler added to logger
+2023-05-09 09:53:03,172 - INFO - testing stop signal...
+2023-05-09 09:53:03,172 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:53:03,820 - INFO - motion detected !
+2023-05-09 09:53:04,196 - INFO - motion detected !
+2023-05-09 09:53:04,321 - INFO - preparing to take a picture
+2023-05-09 09:53:04,697 - INFO - preparing to take a picture
+2023-05-09 09:53:04,728 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-53-04.jpg
+2023-05-09 09:54:49,228 - INFO - Handler added to logger
+2023-05-09 09:54:49,252 - INFO - testing stop signal...
+2023-05-09 09:54:49,252 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:54:52,224 - INFO - motion detected !
+2023-05-09 09:54:52,267 - INFO - motion detected !
+2023-05-09 09:54:52,725 - INFO - preparing to take a picture
+2023-05-09 09:54:52,770 - INFO - preparing to take a picture
+2023-05-09 09:54:52,838 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-54-52.jpg
+2023-05-09 09:58:25,972 - INFO - Handler added to logger
+2023-05-09 09:58:25,996 - INFO - testing stop signal...
+2023-05-09 09:58:25,996 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:58:32,782 - INFO - motion detected !
+2023-05-09 09:58:33,016 - INFO - motion detected !
+2023-05-09 09:58:33,283 - INFO - preparing to take a picture
+2023-05-09 09:58:33,517 - INFO - preparing to take a picture
+2023-05-09 09:58:33,555 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-58-33.jpg
+2023-05-09 09:59:27,496 - INFO - Handler added to logger
+2023-05-09 09:59:27,521 - INFO - testing stop signal...
+2023-05-09 09:59:27,521 - INFO - stop signal file not found, motion detection started
+2023-05-09 09:59:42,441 - INFO - motion detected !
+2023-05-09 09:59:42,561 - INFO - motion detected !
+2023-05-09 09:59:42,942 - INFO - preparing to take a picture
+2023-05-09 09:59:43,062 - INFO - preparing to take a picture
+2023-05-09 09:59:43,090 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_09-59-43.jpg
+2023-05-09 10:02:44,431 - INFO - Handler added to logger
+2023-05-09 10:02:44,454 - INFO - testing stop signal...
+2023-05-09 10:02:44,455 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:02:50,595 - INFO - motion detected !
+2023-05-09 10:02:51,096 - INFO - preparing to take a picture
+2023-05-09 10:02:51,482 - INFO - motion detected !
+2023-05-09 10:02:51,983 - INFO - preparing to take a picture
+2023-05-09 10:02:52,009 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-02-51.jpg
+2023-05-09 10:10:43,033 - INFO - Handler added to logger
+2023-05-09 10:10:43,067 - INFO - testing stop signal...
+2023-05-09 10:10:43,068 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:10:45,440 - INFO - motion detected !
+2023-05-09 10:10:45,941 - INFO - preparing to take a picture
+2023-05-09 10:10:46,085 - INFO - motion detected !
+2023-05-09 10:10:46,586 - INFO - preparing to take a picture
+2023-05-09 10:10:46,619 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-10-46.jpg']' returned non-zero exit status 70.
+2023-05-09 10:10:46,620 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-10-46.jpg
+2023-05-09 10:12:03,222 - INFO - Handler added to logger
+2023-05-09 10:12:03,245 - INFO - testing stop signal...
+2023-05-09 10:12:03,245 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:12:08,186 - INFO - motion detected !
+2023-05-09 10:12:08,262 - INFO - motion detected !
+2023-05-09 10:12:08,687 - INFO - preparing to take a picture
+2023-05-09 10:12:08,764 - INFO - preparing to take a picture
+2023-05-09 10:12:08,796 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-12-08.jpg']' returned non-zero exit status 70.
+2023-05-09 10:12:08,798 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-12-08.jpg
+2023-05-09 10:15:53,265 - INFO - Handler added to logger
+2023-05-09 10:15:53,289 - INFO - testing stop signal...
+2023-05-09 10:15:53,289 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:15:56,818 - INFO - motion detected !
+2023-05-09 10:15:57,306 - INFO - motion detected !
+2023-05-09 10:15:57,319 - INFO - preparing to take a picture
+2023-05-09 10:15:57,807 - INFO - preparing to take a picture
+2023-05-09 10:15:57,848 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-15-57.jpg']' returned non-zero exit status 70.
+2023-05-09 10:15:57,849 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-15-57.jpg
+2023-05-09 10:16:48,193 - INFO - Handler added to logger
+2023-05-09 10:16:48,220 - INFO - testing stop signal...
+2023-05-09 10:16:48,220 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:16:48,906 - INFO - motion detected !
+2023-05-09 10:16:49,233 - INFO - motion detected !
+2023-05-09 10:16:49,407 - INFO - preparing to take a picture
+2023-05-09 10:16:49,734 - INFO - preparing to take a picture
+2023-05-09 10:16:49,765 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-16-49.jpg']' returned non-zero exit status 70.
+2023-05-09 10:16:49,766 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-16-49.jpg
+2023-05-09 10:16:55,081 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-16-49.jpg
+2023-05-09 10:16:55,082 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-16-49.jpg
+2023-05-09 10:17:05,129 - INFO - motion detected !
+2023-05-09 10:17:05,630 - INFO - preparing to take a picture
+2023-05-09 10:17:05,847 - INFO - motion detected !
+2023-05-09 10:17:06,349 - INFO - preparing to take a picture
+2023-05-09 10:17:06,375 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-17-06.jpg']' returned non-zero exit status 70.
+2023-05-09 10:17:06,375 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-06.jpg
+2023-05-09 10:17:11,301 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-05.jpg
+2023-05-09 10:17:11,302 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-05.jpg
+2023-05-09 10:17:40,788 - INFO - Handler added to logger
+2023-05-09 10:17:40,811 - INFO - testing stop signal...
+2023-05-09 10:17:40,811 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:17:44,594 - INFO - motion detected !
+2023-05-09 10:17:44,826 - INFO - motion detected !
+2023-05-09 10:17:45,095 - INFO - preparing to take a picture
+2023-05-09 10:17:45,327 - INFO - preparing to take a picture
+2023-05-09 10:17:45,360 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-17-45.jpg']' returned non-zero exit status 70.
+2023-05-09 10:17:45,361 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-45.jpg
+2023-05-09 10:17:50,766 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-45.jpg
+2023-05-09 10:17:50,766 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-17-45.jpg
+2023-05-09 10:18:25,328 - INFO - motion detected !
+2023-05-09 10:18:25,452 - INFO - motion detected !
+2023-05-09 10:18:25,829 - INFO - preparing to take a picture
+2023-05-09 10:18:25,953 - INFO - preparing to take a picture
+2023-05-09 10:18:25,994 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-18-25.jpg']' returned non-zero exit status 70.
+2023-05-09 10:18:25,995 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-25.jpg
+2023-05-09 10:18:31,549 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-25.jpg
+2023-05-09 10:18:31,550 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-25.jpg
+2023-05-09 10:18:40,877 - INFO - motion detected !
+2023-05-09 10:18:41,049 - INFO - motion detected !
+2023-05-09 10:18:41,379 - INFO - preparing to take a picture
+2023-05-09 10:18:41,550 - INFO - preparing to take a picture
+2023-05-09 10:18:41,610 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-18-41.jpg']' returned non-zero exit status 70.
+2023-05-09 10:18:41,611 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-41.jpg
+2023-05-09 10:18:47,186 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-41.jpg
+2023-05-09 10:18:47,187 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-18-41.jpg
+2023-05-09 10:18:51,178 - INFO - Motion detection stopped
+2023-05-09 10:20:33,142 - INFO - Handler added to logger
+2023-05-09 10:20:33,164 - INFO - testing stop signal...
+2023-05-09 10:20:33,165 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:20:55,561 - INFO - motion detected !
+2023-05-09 10:20:56,062 - INFO - preparing to take a picture
+2023-05-09 10:20:56,204 - INFO - motion detected !
+2023-05-09 10:20:56,705 - INFO - preparing to take a picture
+2023-05-09 10:20:56,731 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-20-56.jpg']' returned non-zero exit status 70.
+2023-05-09 10:20:56,732 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-20-56.jpg
+2023-05-09 10:25:01,979 - INFO - Handler added to logger
+2023-05-09 10:25:02,006 - INFO - testing stop signal...
+2023-05-09 10:25:02,007 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:25:03,741 - INFO - motion detected !
+2023-05-09 10:25:04,042 - INFO - motion detected !
+2023-05-09 10:25:04,242 - INFO - preparing to take a picture
+2023-05-09 10:25:04,543 - INFO - preparing to take a picture
+2023-05-09 10:25:04,574 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-25-04.jpg']' returned non-zero exit status 70.
+2023-05-09 10:25:04,575 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-04.jpg
+2023-05-09 10:25:09,909 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-04.jpg
+2023-05-09 10:25:09,909 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-04.jpg
+2023-05-09 10:25:20,555 - INFO - motion detected !
+2023-05-09 10:25:20,592 - INFO - motion detected !
+2023-05-09 10:25:21,056 - INFO - preparing to take a picture
+2023-05-09 10:25:21,093 - INFO - preparing to take a picture
+2023-05-09 10:25:21,167 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-25-21.jpg']' returned non-zero exit status 70.
+2023-05-09 10:25:21,168 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-21.jpg
+2023-05-09 10:25:26,730 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-21.jpg
+2023-05-09 10:25:26,731 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-21.jpg
+2023-05-09 10:25:30,179 - INFO - testing stop signal...
+2023-05-09 10:25:30,179 - INFO - Stop signal file detected, motion detection stopped
+2023-05-09 10:25:37,188 - INFO - Stop signal file deleted, resuming process
+2023-05-09 10:25:37,220 - INFO - testing stop signal...
+2023-05-09 10:25:37,221 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:25:40,223 - INFO - motion detected !
+2023-05-09 10:25:40,247 - INFO - motion detected !
+2023-05-09 10:25:40,724 - INFO - preparing to take a picture
+2023-05-09 10:25:40,748 - INFO - preparing to take a picture
+2023-05-09 10:25:40,831 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-25-40.jpg']' returned non-zero exit status 70.
+2023-05-09 10:25:40,831 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-40.jpg
+2023-05-09 10:25:46,394 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-40.jpg
+2023-05-09 10:25:46,394 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-25-40.jpg
+2023-05-09 10:25:47,840 - INFO - testing stop signal...
+2023-05-09 10:25:47,840 - INFO - Stop signal file detected, motion detection stopped
+2023-05-09 10:26:01,927 - INFO - Motion detection stopped
+2023-05-09 10:57:00,470 - INFO - Handler added to logger
+2023-05-09 10:57:00,503 - INFO - testing stop signal...
+2023-05-09 10:57:00,504 - INFO - Stop signal file detected, motion detection stopped
+2023-05-09 10:58:00,444 - INFO - Handler added to logger
+2023-05-09 10:58:00,492 - INFO - testing stop signal...
+2023-05-09 10:58:00,494 - INFO - Stop signal file detected, motion detection stopped
+2023-05-09 10:58:30,531 - INFO - Stop signal file deleted, resuming process
+2023-05-09 10:58:30,563 - INFO - testing stop signal...
+2023-05-09 10:58:30,564 - INFO - stop signal file not found, motion detection started
+2023-05-09 10:58:37,945 - INFO - motion detected !
+2023-05-09 10:58:38,447 - INFO - preparing to take a picture
+2023-05-09 10:58:38,605 - INFO - motion detected !
+2023-05-09 10:58:39,106 - INFO - preparing to take a picture
+2023-05-09 10:58:39,140 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/busted_pictures/motion_picture_2023-05-09_10-58-39.jpg']' returned non-zero exit status 70.
+2023-05-09 10:58:39,142 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-58-39.jpg
+2023-05-09 10:58:44,123 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-58-38.jpg
+2023-05-09 10:58:44,123 - INFO - Picture taken and saved as /home/it/busted_pictures/motion_picture_2023-05-09_10-58-38.jpg
+2023-05-09 10:58:46,151 - INFO - testing stop signal...
+2023-05-09 10:58:46,151 - INFO - Stop signal file detected, motion detection stopped
