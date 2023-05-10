@@ -308,3 +308,196 @@
 2023-05-09 18:37:43,906 - INFO - Handler added to logger
 2023-05-09 18:37:43,935 - INFO - testing stop signal...
 2023-05-09 18:37:43,935 - INFO - Stop signal file detected, motion detection stopped
+2023-05-10 13:50:43,200 - INFO - Handler added to logger
+2023-05-10 13:50:43,305 - INFO - testing stop signal...
+2023-05-10 13:50:43,306 - INFO - Stop signal file detected, motion detection stopped
+2023-05-10 13:53:40,496 - INFO - Stop signal file deleted, resuming process
+2023-05-10 13:53:41,640 - INFO - testing stop signal...
+2023-05-10 13:53:41,641 - INFO - Stop signal file detected, motion detection stopped
+2023-05-10 13:53:43,644 - INFO - Stop signal file deleted, resuming process
+2023-05-10 13:53:43,656 - INFO - testing stop signal...
+2023-05-10 13:53:43,657 - INFO - stop signal file not found, motion detection started
+2023-05-10 13:53:44,243 - INFO - motion detected !
+2023-05-10 13:53:44,669 - INFO - motion detected !
+2023-05-10 13:53:44,744 - INFO - preparing to take a picture
+2023-05-10 13:53:44,798 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-44.jpg']' returned non-zero exit status 70.
+2023-05-10 13:53:44,800 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-44.jpg
+2023-05-10 13:53:45,170 - INFO - preparing to take a picture
+2023-05-10 13:53:45,206 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-45.jpg']' returned non-zero exit status 70.
+2023-05-10 13:53:45,206 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-45.jpg
+2023-05-10 13:53:52,711 - INFO - motion detected !
+2023-05-10 13:53:53,212 - INFO - preparing to take a picture
+2023-05-10 13:53:53,217 - INFO - motion detected !
+2023-05-10 13:53:53,244 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-53.jpg']' returned non-zero exit status 70.
+2023-05-10 13:53:53,245 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-53.jpg
+2023-05-10 13:53:53,719 - INFO - preparing to take a picture
+2023-05-10 13:53:53,791 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-53.jpg']' returned non-zero exit status 70.
+2023-05-10 13:53:53,792 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-53-53.jpg
+2023-05-10 13:54:03,010 - INFO - motion detected !
+2023-05-10 13:54:03,512 - INFO - preparing to take a picture
+2023-05-10 13:54:03,571 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-03.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:03,572 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-03.jpg
+2023-05-10 13:54:03,804 - INFO - motion detected !
+2023-05-10 13:54:04,305 - INFO - preparing to take a picture
+2023-05-10 13:54:04,460 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-04.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:04,461 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-04.jpg
+2023-05-10 13:54:11,453 - INFO - motion detected !
+2023-05-10 13:54:11,470 - INFO - motion detected !
+2023-05-10 13:54:11,954 - INFO - preparing to take a picture
+2023-05-10 13:54:11,971 - INFO - preparing to take a picture
+2023-05-10 13:54:11,986 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-11.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:11,987 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-11.jpg
+2023-05-10 13:54:12,003 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-11.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:12,004 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-11.jpg
+2023-05-10 13:54:19,733 - INFO - motion detected !
+2023-05-10 13:54:20,014 - INFO - motion detected !
+2023-05-10 13:54:20,234 - INFO - preparing to take a picture
+2023-05-10 13:54:20,272 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-20.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:20,273 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-20.jpg
+2023-05-10 13:54:20,515 - INFO - preparing to take a picture
+2023-05-10 13:54:20,551 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-20.jpg']' returned non-zero exit status 70.
+2023-05-10 13:54:20,587 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-54-20.jpg
+2023-05-10 13:55:02,447 - INFO - motion detected !
+2023-05-10 13:55:02,634 - INFO - motion detected !
+2023-05-10 13:55:02,952 - INFO - preparing to take a picture
+2023-05-10 13:55:03,003 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-02.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:03,003 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-02.jpg
+2023-05-10 13:55:03,135 - INFO - preparing to take a picture
+2023-05-10 13:55:03,164 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-03.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:03,165 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-03.jpg
+2023-05-10 13:55:11,055 - INFO - motion detected !
+2023-05-10 13:55:11,174 - INFO - motion detected !
+2023-05-10 13:55:11,556 - INFO - preparing to take a picture
+2023-05-10 13:55:11,592 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-11.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:11,592 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-11.jpg
+2023-05-10 13:55:11,675 - INFO - preparing to take a picture
+2023-05-10 13:55:11,704 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-11.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:11,704 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-11.jpg
+2023-05-10 13:55:19,936 - INFO - motion detected !
+2023-05-10 13:55:20,438 - INFO - preparing to take a picture
+2023-05-10 13:55:20,478 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-20.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:20,479 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-20.jpg
+2023-05-10 13:55:20,716 - INFO - motion detected !
+2023-05-10 13:55:21,217 - INFO - preparing to take a picture
+2023-05-10 13:55:21,252 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-21.jpg']' returned non-zero exit status 70.
+2023-05-10 13:55:21,253 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_13-55-21.jpg
+2023-05-10 14:05:48,323 - INFO - motion detected !
+2023-05-10 14:05:48,824 - INFO - preparing to take a picture
+2023-05-10 14:05:48,860 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-48.jpg']' returned non-zero exit status 70.
+2023-05-10 14:05:48,861 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-48.jpg
+2023-05-10 14:05:48,951 - INFO - motion detected !
+2023-05-10 14:05:49,452 - INFO - preparing to take a picture
+2023-05-10 14:05:49,481 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-49.jpg']' returned non-zero exit status 70.
+2023-05-10 14:05:49,481 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-49.jpg
+2023-05-10 14:05:58,401 - INFO - motion detected !
+2023-05-10 14:05:58,492 - INFO - motion detected !
+2023-05-10 14:05:58,902 - INFO - preparing to take a picture
+2023-05-10 14:05:58,932 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-58.jpg']' returned non-zero exit status 70.
+2023-05-10 14:05:58,933 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-58.jpg
+2023-05-10 14:05:58,993 - INFO - preparing to take a picture
+2023-05-10 14:05:59,027 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-58.jpg']' returned non-zero exit status 70.
+2023-05-10 14:05:59,028 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-05-58.jpg
+2023-05-10 14:06:07,552 - INFO - motion detected !
+2023-05-10 14:06:08,038 - INFO - motion detected !
+2023-05-10 14:06:08,054 - INFO - preparing to take a picture
+2023-05-10 14:06:08,081 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-08.jpg']' returned non-zero exit status 70.
+2023-05-10 14:06:08,082 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-08.jpg
+2023-05-10 14:06:08,540 - INFO - preparing to take a picture
+2023-05-10 14:06:08,575 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-08.jpg']' returned non-zero exit status 70.
+2023-05-10 14:06:08,576 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-08.jpg
+2023-05-10 14:06:16,584 - INFO - motion detected !
+2023-05-10 14:06:16,585 - INFO - motion detected !
+2023-05-10 14:06:17,085 - INFO - preparing to take a picture
+2023-05-10 14:06:17,086 - INFO - preparing to take a picture
+2023-05-10 14:06:17,123 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-17.jpg']' returned non-zero exit status 70.
+2023-05-10 14:06:17,124 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-17.jpg
+2023-05-10 14:06:17,127 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-17.jpg']' returned non-zero exit status 70.
+2023-05-10 14:06:17,127 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-06-17.jpg
+2023-05-10 14:06:27,139 - INFO - testing stop signal...
+2023-05-10 14:06:27,141 - INFO - Stop signal file detected, motion detection stopped
+2023-05-10 14:06:56,172 - INFO - Stop signal file deleted, resuming process
+2023-05-10 14:06:56,205 - INFO - testing stop signal...
+2023-05-10 14:06:56,205 - INFO - stop signal file not found, motion detection started
+2023-05-10 14:07:00,342 - INFO - motion detected !
+2023-05-10 14:07:00,843 - INFO - preparing to take a picture
+2023-05-10 14:07:00,879 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-00.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:00,879 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-00.jpg
+2023-05-10 14:07:01,233 - INFO - motion detected !
+2023-05-10 14:07:01,734 - INFO - preparing to take a picture
+2023-05-10 14:07:01,766 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-01.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:01,767 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-01.jpg
+2023-05-10 14:07:08,922 - INFO - motion detected !
+2023-05-10 14:07:09,423 - INFO - preparing to take a picture
+2023-05-10 14:07:09,449 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-09.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:09,450 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-09.jpg
+2023-05-10 14:07:09,776 - INFO - motion detected !
+2023-05-10 14:07:10,277 - INFO - preparing to take a picture
+2023-05-10 14:07:10,306 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-10.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:10,306 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-10.jpg
+2023-05-10 14:07:17,923 - INFO - motion detected !
+2023-05-10 14:07:18,317 - INFO - motion detected !
+2023-05-10 14:07:18,425 - INFO - preparing to take a picture
+2023-05-10 14:07:18,489 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-18.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:18,490 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-18.jpg
+2023-05-10 14:07:18,818 - INFO - preparing to take a picture
+2023-05-10 14:07:18,850 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-18.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:18,851 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-18.jpg
+2023-05-10 14:07:26,592 - INFO - motion detected !
+2023-05-10 14:07:26,859 - INFO - motion detected !
+2023-05-10 14:07:27,093 - INFO - preparing to take a picture
+2023-05-10 14:07:27,137 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-27.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:27,138 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-27.jpg
+2023-05-10 14:07:27,361 - INFO - preparing to take a picture
+2023-05-10 14:07:27,417 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-27.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:27,418 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-27.jpg
+2023-05-10 14:07:57,457 - INFO - motion detected !
+2023-05-10 14:07:57,958 - INFO - preparing to take a picture
+2023-05-10 14:07:57,989 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-57.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:57,990 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-57.jpg
+2023-05-10 14:07:58,453 - INFO - motion detected !
+2023-05-10 14:07:58,954 - INFO - preparing to take a picture
+2023-05-10 14:07:58,986 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-58.jpg']' returned non-zero exit status 70.
+2023-05-10 14:07:58,987 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-07-58.jpg
+2023-05-10 14:08:14,321 - INFO - Handler added to logger
+2023-05-10 14:08:14,325 - INFO - testing stop signal...
+2023-05-10 14:08:14,326 - INFO - stop signal file not found, motion detection started
+2023-05-10 14:08:25,604 - INFO - motion detected !
+2023-05-10 14:08:26,106 - INFO - preparing to take a picture
+2023-05-10 14:08:26,361 - INFO - motion detected !
+2023-05-10 14:08:26,862 - INFO - preparing to take a picture
+2023-05-10 14:08:26,930 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-26.jpg']' returned non-zero exit status 70.
+2023-05-10 14:08:26,931 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-26.jpg
+2023-05-10 14:08:31,742 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-26.jpg
+2023-05-10 14:08:31,742 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-26.jpg
+2023-05-10 14:08:39,777 - INFO - motion detected !
+2023-05-10 14:08:39,947 - INFO - motion detected !
+2023-05-10 14:08:40,278 - INFO - preparing to take a picture
+2023-05-10 14:08:40,448 - INFO - preparing to take a picture
+2023-05-10 14:08:40,481 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-40.jpg']' returned non-zero exit status 70.
+2023-05-10 14:08:40,482 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-40.jpg
+2023-05-10 14:08:45,914 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-40.jpg
+2023-05-10 14:08:45,915 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-40.jpg
+2023-05-10 14:08:49,246 - INFO - motion detected !
+2023-05-10 14:08:49,492 - INFO - motion detected !
+2023-05-10 14:08:49,747 - INFO - preparing to take a picture
+2023-05-10 14:08:49,993 - INFO - preparing to take a picture
+2023-05-10 14:08:50,021 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-49.jpg']' returned non-zero exit status 70.
+2023-05-10 14:08:50,022 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-49.jpg
+2023-05-10 14:08:55,413 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-49.jpg
+2023-05-10 14:08:55,413 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-49.jpg
+2023-05-10 14:08:58,687 - INFO - motion detected !
+2023-05-10 14:08:59,032 - INFO - motion detected !
+2023-05-10 14:08:59,188 - INFO - preparing to take a picture
+2023-05-10 14:08:59,533 - INFO - preparing to take a picture
+2023-05-10 14:08:59,565 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-59.jpg']' returned non-zero exit status 70.
+2023-05-10 14:08:59,566 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-59.jpg
+2023-05-10 14:09:04,849 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-59.jpg
+2023-05-10 14:09:04,849 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-08-59.jpg
+2023-05-10 14:09:07,516 - INFO - motion detected !
+2023-05-10 14:09:07,575 - INFO - motion detected !
+2023-05-10 14:09:08,017 - INFO - preparing to take a picture
+2023-05-10 14:09:08,076 - INFO - preparing to take a picture
+2023-05-10 14:09:08,122 - ERROR - Error taking picture: Command '['raspistill', '-o', '/home/it/media/busted_pictures/motion_picture_2023-05-10_14-09-08.jpg']' returned non-zero exit status 70.
+2023-05-10 14:09:08,123 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-09-08.jpg
+2023-05-10 14:09:13,686 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-09-08.jpg
+2023-05-10 14:09:13,686 - INFO - Picture taken and saved as /home/it/media/busted_pictures/motion_picture_2023-05-10_14-09-08.jpg

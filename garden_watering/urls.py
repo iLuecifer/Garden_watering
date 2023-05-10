@@ -18,6 +18,8 @@ from django.contrib import admin
 from garden import views 
 from django.urls import path, re_path
 from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -35,7 +37,7 @@ urlpatterns = [
     path('api/login/', views.CustomAuthToken.as_view()),
     path('api/logout/', views.logout_api),
     path('list/', views.UserList.as_view()),
-    
-    #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    path('api/images/', views.image_list),
+    path('api/getuser/', views.GetUserView.as_view()),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

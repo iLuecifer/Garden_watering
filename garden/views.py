@@ -277,3 +277,17 @@ class CustomAuthToken(ObtainAuthToken):
         user = serializer.validated_data['user']
         token, created = Token.objects.get_or_create(user=user)
         return Response({'token': token.key})
+
+def image_list(request):
+    directory = '/home/it/garden_watering/busted_pictures'  # replace with the path to your directory
+    images = []
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg') or filename.endswith('.png'):
+            images.append({'name': filename})
+    return JsonResponse({'images': images})
+
+class GetUserView(APIView):
+    permission_classes = [IsAuthenticatedWithToken]
+    def get(self, request):
+        name = request.user.username
+        return JsonResponse({"user": name})

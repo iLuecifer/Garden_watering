@@ -39,35 +39,37 @@ const SensorDataForm = () => {
     fetchData();  }, []);
 
   useEffect(()=>{
-    let air_temp = [];
-    let pressure = [];
-    let air_hum = [];
-    let soil_hum = [];
-    let soil_temp = [];
-    let light = [];
+    let air_temp = { 'x': [], 'y': [] };
+    let pressure = { 'x': [], 'y': [] };
+    let air_hum = { 'x': [], 'y': [] };
+    let soil_hum = { 'x': [], 'y': [] };
+    let soil_temp = { 'x': [], 'y': [] };
+    let light = { 'x': [], 'y': [] };
+
     if (Object.keys(sensorData)==0)
       return;
 
     sensorData.map((sensordt) => {
-        air_temp['x'].push(sensordt.air_temp)
-        air_temp['y'].push(sensordt.timestamp)
-        pressure['y'].push(sensordt.timestamp)
-        pressure['x'].push(sensordt.pressure)
-        air_hum['x'].push(sensordt.air_hum)
-        air_hum['y'].push(sensordt.timestamp)
-        soil_hum['x'].push(sensordt.soil_hum)
-        soil_hum['y'].push(sensordt.timestamp)
-        soil_temp['x'].push(sensordt.soil_temp)
-        soil_temp['y'].push(sensordt.timestamp)
-        light['x'].push(sensordt.light)
-        light['y'].push(sensordt.timestamp)
+        air_temp['y'].push(sensordt.air_temp)
+        air_temp['x'].push(sensordt.timestamp)
+        pressure['x'].push(sensordt.timestamp)
+        pressure['y'].push(sensordt.pressure)
+        air_hum['y'].push(sensordt.air_hum)
+        air_hum['x'].push(sensordt.timestamp)
+        soil_hum['y'].push(sensordt.soil_hum)
+        soil_hum['x'].push(sensordt.timestamp)
+        soil_temp['y'].push(sensordt.soil_temp)
+        soil_temp['x'].push(sensordt.timestamp)
+        light['y'].push(sensordt.light)
+        light['x'].push(sensordt.timestamp)
     });
     setAir_tempp({
         x: air_temp['x'],
         y: air_temp['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#00ccff'},
+        name: 'Luft',
       });
 
       setPressurep({
@@ -75,7 +77,8 @@ const SensorDataForm = () => {
         y: pressure['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#ff66ff'},
+        name: 'Luft',
       });
 
       setAir_hump({
@@ -83,7 +86,8 @@ const SensorDataForm = () => {
         y: air_hum['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#00ffcc'},
+        name: 'Luft',
       });
 
       setSoil_hump({
@@ -91,7 +95,8 @@ const SensorDataForm = () => {
         y: soil_hum['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#996633'},
+        name: 'Erde ',
       });
 
       setSoil_tempp({
@@ -99,7 +104,8 @@ const SensorDataForm = () => {
         y: soil_temp['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#ff9966'},
+        name: 'Erde ',
       });
 
       setLightp({
@@ -107,7 +113,8 @@ const SensorDataForm = () => {
         y: light['y'],
         type: 'scatter',
         mode: 'lines+points',
-        marker: {color: getRandomColor()},
+        marker: {color: '#ffff66'},
+        name: 'Erde ',
       });
   }, [sensorData])
 
@@ -129,25 +136,33 @@ const SensorDataForm = () => {
           }}
         />
       </LocalizationProvider>
-      {/* <Plot
-        data={[
-          
-          
-        ]}
-        layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
-      />
-
-      {Plotly.newPlot('myDiv', data, {title: 'Sensor Data', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}})}
-      <Plot
+       <Plot
         data={[
           air_tempp,
-          // pressurep,
-          // air_hump,
-          // soil_hump,
-          // soil_tempp,
-          // lightp
+          soil_tempp
         ]}
-        layout={{title: 'Sensor Data', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}}}/> */}
+        layout={ {title: 'Temperatur in C°', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}} }
+      />
+        <Plot
+        data={[
+          air_hump,
+          soil_hump
+        ]}
+        layout={ {title: 'Feutchtigkeit in %', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}} }
+      />
+        <Plot
+        data={[
+          lightp
+        ]}
+        layout={ {title: 'Licht in Lux', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}} }
+      />
+        <Plot
+        data={[
+          pressurep
+        ]}
+        layout={ {title: 'Druck in hPa', plot_bgcolor: "black", paper_bgcolor: "black", font: {color: "white"}} }
+      />
+   
     </div>
   );
 };

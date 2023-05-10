@@ -8,9 +8,11 @@ import SensorDataTable from './pages/SensorDT.js';
 import RelaisLogsTable from './pages/RelaisLogs.js';
 import CriticalForm from './pages/CriticalForm.js';
 import Monitoring from './pages/Monitoring.js';
+import Images from './pages/Images';
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import axios from "axios";
 
 
 const theme = createTheme({
@@ -142,6 +144,8 @@ function App() {
         return <CriticalForm />;
       case 6:
         return <Monitoring />;
+      case 7:
+          return <Images />;
       default:
         return null;
     }
@@ -150,9 +154,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+      <Logout />
         <Router>
           <Routes>
             <Route exact path="/" element={<RequireAuth>
+
               <Box display="flex">
                 <Menu onChange={handleMenuChange} />
                 <Box flexGrow={1} p={2}>
@@ -167,6 +173,33 @@ function App() {
       </div>
     </ThemeProvider>
   );
+}
+
+
+function Logout() {
+  const [username , setUsername] = useState("")
+  const token = localStorage.getItem("token")
+
+    async function handleLogout(){
+      const response = await axios.post("http://127.0.0.1:8999/api/getuser/", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      });
+      response = await response.json()
+      setUsername(response)
+    }
+
+
+    return (
+        <nav>
+            <div>
+                Welcome, {username}!
+                <img src={"https://robohash.org/garden"} alt="User avatar" style={{ borderRadius: '50%', width: '40px', height: '40px' }} />
+            </div>
+            <button onClick={handleLogout}>Logout</button>
+        </nav>
+    );
 }
 
 export default App;

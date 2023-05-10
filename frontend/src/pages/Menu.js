@@ -10,6 +10,7 @@ const SideMenu = ({ onChange }) => {
   };
 
   return (
+    <>
     <Drawer variant="permanent">
       <List>
         <ListItem
@@ -61,8 +62,17 @@ const SideMenu = ({ onChange }) => {
         >
           <ListItemText primary="Monitoring" />
         </ListItem>
+        <ListItem
+          button
+          selected={selectedIndex === 7}
+          onClick={(event) => handleListItemClick(event, 7)}
+        >
+          <ListItemText primary="Security" />
+        </ListItem>
       </List>
     </Drawer>
+   
+      </>
   );
 };
 

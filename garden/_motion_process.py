@@ -47,7 +47,7 @@ def detect_motion(channel):
     GPIO.output(camera_trigger, GPIO.LOW)
     logger.info("preparing to take a picture")
 
-    directory = Path.home() / "busted_pictures"
+    directory = Path.home() / "media/busted_pictures"
     directory.mkdir(parents=True, exist_ok=True)
 
 
