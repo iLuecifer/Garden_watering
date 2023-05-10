@@ -1,15 +1,1 @@
-{
-    "air_temp_critical_min": 5,
-    "air_temp_critical_max": 35,
-    "air_hum_critical_min": 30,
-    "air_hum_critical_max": 80,
-    "soil_temp_critical_min": 10,
-    "soil_temp_critical_max": 30,
-    "soil_hum_critical_min": 200,
-    "soil_hum_critical_max": 600,
-    "light_critical_min": 0,
-    "light_critical_max": 2000,
-    "pressure_critical_min": 950,
-    "pressure_critical_max": 1050
-  }
-  
+{"air_temp_min": 5.0, "air_temp_max": 35.0, "air_hum_min": 30.0, "air_hum_max": 80.0, "soil_temp_min": 10.0, "soil_temp_max": 30.0, "soil_hum_min": 200.0, "soil_hum_max": 600.0, "light_min": 0.0, "light_max": 2000.0, "pressure_min": 950.0, "pressure_max": 1050.0}

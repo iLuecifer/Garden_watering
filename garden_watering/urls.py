@@ -22,18 +22,20 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/measure/', views.live_measurement ),
+    path('api/measure/', views.Live_measurement.as_view() ),
     path('api/insert/', views.Insert_sensor_value_api.as_view()),
-    path('api/getall/', views.GetAllSensorData_api.as_view()),
-    path('api/capture/', views.PictureAtMotion_api.as_view()),
+    path('api/getall/', views.SensorValueList.as_view()),
     path('api/enable_relais/', views.Enable_relais_api.as_view()),
     path('api/disable_relais/', views.Disable_relais_api.as_view()),
     path('api/run_motion_detection/', views.Motion_detection_api.as_view()),
     path('api/live/', views.Activate_liveStream.as_view()),
-    path('api/register/', views.CreateUserView.as_view(), name='register'),
-    path('api/login/', views.CustomAuthToken.as_view(), name='login'),
-    path('api/logout/', views.logout_api, name='logout'),
-    path('list/', views.UserList.as_view(), name='logout'),
+    path('api/relais_data/', views.WaterPumpeLogsList.as_view()),
+    path('api/critical_values/', views.CriticalValuesAPIView.as_view()),
+    path('api/register/', views.CreateUserView.as_view()),
+    path('api/login/', views.CustomAuthToken.as_view()),
+    path('api/logout/', views.logout_api),
+    path('list/', views.UserList.as_view()),
+    
     #re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 
 ]

@@ -9,7 +9,7 @@ import json
 # Set the environment variable for Django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "garden_watering.settings")
 django.setup()
-from garden.views import insert_sensor_value, enable_relais, disable_relais
+from garden.utils import insert_sensor_value, enable_relais, disable_relais
 
 
 while True:

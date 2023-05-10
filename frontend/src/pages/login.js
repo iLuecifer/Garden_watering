@@ -9,7 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import axios from "axios";
-
+import { Button, Grid } from '@mui/material';
 
 // Create a context to store the authentication state
 const AuthContext = React.createContext({
@@ -40,9 +40,17 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-     <UserField setEmail = {setEmail}/>
-     <Password setPassword = {setPassword}/>
-      <button type="submit">Login</button>
+      <Grid container justifyContent="center" spacing={2}>
+        <Grid item>
+          <UserField setEmail={setEmail} />
+        </Grid>
+        <Grid item>
+          <Password setPassword={setPassword} />
+        </Grid>
+        <Grid item>
+          <SubmitButton />
+        </Grid>
+      </Grid>
     </form>
   );
 }
@@ -124,5 +132,18 @@ const Password = (props) => {
       />
     );
   };
-  
+
+  const SubmitButton = ({ onSubmit, disabled }) => {
+    return (
+      <Button
+        variant="contained"
+        color="primary"
+        type="submit"
+        onClick={onSubmit}
+        disabled={disabled}
+      >
+        Einloggen
+      </Button>
+    );
+  };
 export default App;

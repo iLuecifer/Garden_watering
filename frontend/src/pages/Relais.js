@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import axios from "axios";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
 
 
 export default function BasicButtons() {
@@ -82,7 +83,7 @@ export default function BasicButtons() {
     }
   
     return (
-      <div>
+        <Box>
         <Stack spacing={2} direction="row">
           <Button variant="text" onClick={handleEnableClick}>
             Pumpe aktivieren
@@ -99,7 +100,7 @@ export default function BasicButtons() {
             {alertMessage}
           </Alert>
         </Snackbar>
-      </div>
+        </Box>
     );
   }
   
