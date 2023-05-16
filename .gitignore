@@ -37,3 +37,5 @@ Thumbs.db
 /garden/__pycache__/
 /garden_watering/__pycache__/
 __pycache__/
+media/
+busted_pictures/
